@@ -1,412 +1,727 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Web Technologies Guide</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <nav class="navbar">
-        <div class="navbar-container">
-            <a href="#home" class="logo">WebGuide</a>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#http">HTTP/HTTPS</a></li>
-                <li><a href="#status-codes">Status Codes</a></li>
-                <li><a href="#git">Git VCS</a></li>
-                <li><a href="#css">CSS Units</a></li>
-                <li><a href="#positioning">Positioning</a></li>
-                <li><a href="#bootstrap">Bootstrap</a></li>
-                <li><a href="#js">JavaScript</a></li>
-                <li><a href="#dom">DOM</a></li>
-            </ul>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+      <div class="navbar-container">
+        <a href="#home" class="logo">WebGuide</a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#http">HTTP/HTTPS</a></li>
+          <li><a href="#status-codes">Status Codes</a></li>
+          <li><a href="#git">Git VCS</a></li>
+          <li><a href="#css">CSS Units</a></li>
+          <li><a href="#positioning">Positioning</a></li>
+          <li><a href="#bootstrap">Bootstrap</a></li>
+          <li><a href="#js">JavaScript</a></li>
+          <li><a href="#dom">DOM</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
+      </div>
     </nav>
 
     <div class="container">
-        <main class="content">
-            <section id="home" class="section">
-                <h1>Web Technologies Guide</h1>
-                <div class="card">
-                    <p>Complete reference for modern web development covering HTTP/HTTPS, Status Codes, Git, CSS Units & Positioning, Bootstrap, JavaScript, and DOM.</p>
-                </div>
-            </section>
+      <main class="content">
+        <section id="home" class="section">
+          <h1>Web Technologies Guide</h1>
+          <div class="card">
+            <p>
+              Complete reference for modern web development covering HTTP/HTTPS,
+              Status Codes, Git, CSS Units & Positioning, Bootstrap, JavaScript,
+              and DOM.
+            </p>
+          </div>
+        </section>
 
-            <section id="http" class="section">
-                <h1>Hypertext Transfer Protocol (HTTP)</h1>
-                <div class="card">
-                    <h3>HTTP</h3>
-                    <p>HTTP is a stateless, application-level protocol used for communication between a web browser and a web server.</p>
-                    <p>HTTP is an application-level protocol that defines how clients and servers exchange data.</p>
-                    <p>Methods: GET, POST</p>
-                    <p>It includes headers, status codes, payload, etc.</p>
-                    <p>It only handles communication semantics, not security or protection.</p>
-                </div>
-                
-                <div class="card">
-                    <h3>HTTPS (Secure)</h3>
-                    <p>HTTPS is the secure version of HTTP that uses SSL/TLS encryption to protect data.</p>
-                    <p>HTTPS is the same HTTP protocol wrapped inside a TLS cryptographic tunnel.</p>
-                    <p>Nothing changes in routes, APIs, JSON payloads, or application logic.</p>
-                    <p>Only the transport layer gains encryption, integrity, and identity verification.</p>
-                </div>
+<section id="http" class="section">
+  <h1>Hypertext Transfer Protocol (HTTP)</h1>
 
-                <h2>Technical Differences</h2>
-                <div class="grid-2">
-                    <div class="diff-card">
-                        <h4>1) Encryption (Prevents Traffic Sniffing)</h4>
-                        <p>The TLS handshake negotiates symmetric keys, which make packets unreadable to attackers.</p>
-                        <p>It protects against open Wi-Fi networks, proxies, corporate firewalls, and ISP monitoring.</p>
-                    </div>
-                    <div class="diff-card">
-                        <h4>2) Integrity (Prevents Packet Tampering)</h4>
-                        <p>MAC/AEAD ensures that if data is modified during transmission, the connection breaks.</p>
-                        <p>Plain HTTP cannot detect data injection or modification.</p>
-                    </div>
-                    <div class="diff-card">
-                        <h4>3) Server Identity & Trust Chain</h4>
-                        <p>Digital certificates validate the domain name, which protects against MITM (Man-in-the-Middle) attacks on public hotspots and proxies.</p>
-                        <p>HTTP has no concept of authenticity or identity verification.</p>
-                    </div>
-                    <div class="diff-card">
-                        <h4>4) Cookies & Authentication Token Safety</h4>
-                        <p>HTTPS allows the use of Secure, HttpOnly, and SameSite cookie attributes, which reduce session hijacking and credential leakage.</p>
-                    </div>
-                    <div class="diff-card">
-                        <h4>5) Performance & Modern Updates</h4>
-                        <p>Modern web performance requires:</p>
-                        <ul>
-                            <li>HTTP/2 multiplexing</li>
-                            <li>HTTP/3 / QUIC</li>
-                            <li>Service Workers / PWAs</li>
-                            <li>Brotli compression</li>
-                        </ul>
-                    </div>
-                    <div class="diff-card">
-                        <h4>6) Platform & Browser Policies</h4>
-                        <p>On HTTP, many browser APIs are blocked (Geolocation, Camera, Clipboard, PWA support).</p>
-                        <p>Forms are marked as "Not Secure," which can negatively affect SEO rankings.</p>
-                    </div>
-                    <div class="diff-card highlight">
-                        <h4>7) Ports & Transport</h4>
-                        <p>HTTP uses port 80.</p>
-                        <p>HTTPS uses port 443.</p>
-                        <p>Protocol semantics remain the same; only the transport layer changes.</p>
-                    </div>
-                </div>
-            </section>
+  <div class="card">
+    <h3>HTTP</h3>
+    <p>
+      HTTP is a stateless, application-level protocol used for
+      communication between a web browser and a web server.
+    </p>
+    <p>
+      HTTP defines how clients and servers exchange data.
+    </p>
+    <p>Methods: GET, POST</p>
+    <p>Includes headers, status codes, and payload.</p>
+    <p>Handles communication only, not security.</p>
+  </div>
 
-            <section id="status-codes" class="section">
-                <h1>HTTP Status Codes</h1>
-                <div class="status-grid">
-                    <div class="status-group">
-                        <h3>1XX – Informational Status Codes</h3>
-                        <p>Indicate that the request has been received and processing is continuing.</p>
-                        <p><strong>100</strong> – Continue: The server has received the initial part of the request.</p>
-                        <p><strong>101</strong> – Switching Protocols: The server switches protocols as requested by the client (for example, upgrading from HTTP to WebSockets).</p>
-                    </div>
-                    <div class="status-group">
-                        <h3>2XX – Successful Status Codes</h3>
-                        <p>Indicate that the request was successfully received, understood, and processed.</p>
-                        <p><strong>200</strong> – OK: The request was successful, and the server returned the requested data.</p>
-                        <p><strong>201</strong> – Created: A new resource has been successfully created (commonly after form submission or data creation).</p>
-                        <p><strong>204</strong> – No Content: The request was successful, but the server has no content to return.</p>
-                    </div>
-                    <div class="status-group">
-                        <h3>3XX – Redirection Status Codes</h3>
-                        <p>Indicate that the requested resource is located elsewhere and further action is required to complete the request.</p>
-                        <p><strong>301</strong> – Moved Permanently: The resource has permanently moved to a new URL. Search engines update their records accordingly.</p>
-                        <p><strong>302</strong> – Found (Temporary Redirect): The resource is temporarily available at a different location.</p>
-                        <p><strong>304</strong> – Not Modified: The requested resource has not changed since the last request, so the browser can use its cached version.</p>
-                    </div>
-                    <div class="status-group">
-                        <h3>4XX – Client Error Status Codes</h3>
-                        <p>Indicate that there is a problem with the client-side request.</p>
-                        <p><strong>400</strong> – Bad Request: The server cannot understand the request due to incorrect syntax or invalid data.</p>
-                        <p><strong>401</strong> – Unauthorized: Authentication is required, and the client has not provided valid credentials.</p>
-                        <p><strong>403</strong> – Forbidden: The client is authenticated but does not have permission to access the resource.</p>
-                        <p><strong>404</strong> – Not Found: The requested resource does not exist on the server.</p>
-                    </div>
-                    <div class="status-group">
-                        <h3>5XX – Server Error Status Codes</h3>
-                        <p>Indicate that the server failed to fulfill a valid request.</p>
-                        <p><strong>500</strong> – Internal Server Error: A generic error indicating that the server encountered an unexpected condition.</p>
-                        <p><strong>502</strong> – Bad Gateway: The server received an invalid response from an upstream server.</p>
-                        <p><strong>503</strong> – Service Unavailable: The server is unable to handle the request due to overload or maintenance.</p>
-                        <p><strong>504</strong> – Gateway Timeout: The server did not receive a timely response from another server.</p>
-                    </div>
-                </div>
-            </section>
+  <div class="card">
+    <h3>HTTPS (Secure)</h3>
+    <p>
+      HTTPS is the secure version of HTTP that uses SSL/TLS encryption.
+    </p>
+    <p>
+      It wraps HTTP inside a secure cryptographic tunnel.
+    </p>
+    <p>
+      Application logic, APIs, and routes remain unchanged.
+    </p>
+    <p>
+      Only the transport layer gains encryption, integrity, and authentication.
+    </p>
+  </div>
 
-            <section id="git" class="section">
-                <h1>Version Control System</h1>
-                <div class="card">
-                    <p>A Version Control System (VCS) is a tool designed to track changes in file history and enable multiple developers to work on the same project efficiently.</p>
-                    <p>Git is a distributed version control system, while GitHub is a cloud-based platform that hosts Git repositories and enables collaboration.</p>
-                </div>
-                <div class="card">
-                    <h3>Git</h3>
-                    <p>Git is an open-source distributed version control system created by Linus Torvalds.</p>
-                    <p>It allows developers to track changes in source code, revert to previous versions, create branches for experimentation, and collaborate efficiently.</p>
-                </div>
-                <div class="card">
-                    <h3>Key Characteristics</h3>
-                    <ul>
-                        <li>Distributed system</li>
-                        <li>High performance</li>
-                        <li>Offline capability</li>
-                        <li>Data integrity</li>
-                    </ul>
-                </div>
-                <h3>Git Commands</h3>
-                <div class="command-grid">
-                    <div><code>git init</code>: Initializes a new repository.</div>
-                    <div><code>git status</code>: Displays the current state of the working repository and shows modified files.</div>
-                    <div><code>git add</code>: Adds files to the staging area and prepares them for committing.</div>
-                    <div><code>git commit</code>: Saves staged changes permanently in the repository. Each commit has a unique hash ID, author information, timestamp, and commit message.</div>
-                    <div><code>git log</code>: Displays the commit history and is useful for tracking project evolution.</div>
-                    <div><code>git branch</code>: Used to create and manage branches.</div>
-                    <div><code>git checkout</code>: Switches between branches.</div>
-                    <div><code>git merge</code>: Combines changes from one branch into another.</div>
-                </div>
-            </section>
+  <h2>Technical Differences</h2>
 
-            <section id="css" class="section">
-                <h1>CSS Dimensions</h1>
-                <h2>1) Absolute Units</h2>
-                <div class="unit-grid">
-                    <div class="unit-card">
-                        <h4><code>px</code></h4>
-                        <p>A fixed unit based on screen pixels. It does not change relative to other elements.</p>
-                    </div>
-                    <div class="unit-card">
-                        <h4><code>cm</code></h4>
-                        <p>A size measured in centimeters. Mostly used for print-based layouts.</p>
-                    </div>
-                    <div class="unit-card">
-                        <h4><code>mm</code></h4>
-                        <p>A size measured in millimeters. Also mainly used for print-based layouts.</p>
-                    </div>
-                </div>
+  <div class="grid-2">
+    <div class="diff-card">
+      <h4>1) Encryption</h4>
+      <p>
+        TLS handshake negotiates keys making packets unreadable.
+      </p>
+    </div>
 
-                <h2>2) Relative Units</h2>
-                <div class="unit-grid">
-                    <div class="unit-card">
-                        <h4><code>%</code></h4>
-                        <p>Relative to the size of the parent element.</p>
-                        <p>Example: <code>width: 50%;</code></p>
-                    </div>
-                    <div class="unit-card">
-                        <h4><code>em</code></h4>
-                        <p>Relative to the font size of the parent element.</p>
-                        <p>Example: <code>font-size: 2em;</code></p>
-                    </div>
-                    <div class="unit-card">
-                        <h4><code>rem</code></h4>
-                        <p>Relative to the root (html) font size.</p>
-                        <p>Example: <code>font-size: 1.5rem;</code></p>
-                    </div>
-                    <div class="unit-card">
-                        <h4><code>vw</code></h4>
-                        <p>1% of the viewport width.</p>
-                        <p>Example: <code>width: 50vw;</code></p>
-                    </div>
-                    <div class="unit-card">
-                        <h4><code>vh</code></h4>
-                        <p>1% of the viewport height.</p>
-                        <p>Example: <code>height: 100vh;</code></p>
-                    </div>
-                </div>
-            </section>
+    <div class="diff-card">
+      <h4>2) Integrity</h4>
+      <p>
+        MAC/AEAD ensures data cannot be modified.
+      </p>
+    </div>
 
-            <section id="positioning" class="section">
-                <h1>CSS Position</h1>
-                <div class="position-grid">
-                    <div class="pos-card">
-                        <h4>Static</h4>
-                        <p>The default positioning. Elements follow the normal document flow.</p>
-                    </div>
-                    <div class="pos-card">
-                        <h4>Relative</h4>
-                        <p>Moves relative to its original position.</p>
-                        <p><code>position: relative; top: 10px;</code></p>
-                    </div>
-                    <div class="pos-card">
-                        <h4>Absolute</h4>
-                        <p>Positioned relative to the nearest positioned (non-static) parent element.</p>
-                        <p><code>position: absolute; top: 0;</code></p>
-                    </div>
-                    <div class="pos-card">
-                        <h4>Fixed</h4>
-                        <p>Stays fixed relative to the viewport, even when scrolling.</p>
-                        <p><code>position: fixed; bottom: 0;</code></p>
-                    </div>
-                    <div class="pos-card">
-                        <h4>Sticky</h4>
-                        <p>A hybrid of relative and fixed positioning. It behaves as relative until a defined scroll position is reached.</p>
-                        <p><code>position: sticky; top: 0;</code></p>
-                    </div>
-                    <div class="pos-card">
-                        <h4>Floating</h4>
-                        <p>Originally used for layouts. It allows elements to float left or right.</p>
-                        <p><code>float: left;</code></p>
-                    </div>
-                </div>
-            </section>
+    <div class="diff-card">
+      <h4>3) Server Identity</h4>
+      <p>
+        SSL certificates verify domain authenticity.
+      </p>
+    </div>
 
-            <section id="bootstrap" class="section">
-                <h1>Bootstrap (getbootstrap.com – documentation)</h1>
-                <h2>Breakpoints</h2>
-                <div class="table-container">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Breakpoint</th>
-                                <th>Screen Size</th>
-                                <th>Class Prefix</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>Extra Small</td><td>&lt; 576px</td><td>col-</td></tr>
-                            <tr><td>Small</td><td>≥ 576px</td><td>col-sm-</td></tr>
-                            <tr><td>Medium</td><td>≥ 768px</td><td>col-md-</td></tr>
-                            <tr><td>Large</td><td>≥ 992px</td><td>col-lg-</td></tr>
-                            <tr><td>XL</td><td>≥ 1200px</td><td>col-xl-</td></tr>
-                            <tr><td>XXL</td><td>≥ 1400px</td><td>col-xxl-</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-                <p class="example">Use Case: <code>col-sm-12 col-md-6 col-lg-4</code> This changes the column width across different devices.</p>
+    <div class="diff-card">
+      <h4>4) Cookie Security</h4>
+      <p>
+        Secure and HttpOnly cookies reduce session hijacking.
+      </p>
+    </div>
 
-                <h2>Colors (Predefined Theme Colors)</h2>
-                <div class="color-grid">
-                    <div><code>text-primary</code> <span class="color-badge primary">Primary</span></div>
-                    <div><code>text-success</code> <span class="color-badge success">Success</span></div>
-                    <div><code>text-danger</code> <span class="color-badge danger">Danger</span></div>
-                    <div><code>text-warning</code> <span class="color-badge warning">Warning</span></div>
-                    <div><code>text-info</code> <span class="color-badge info">Info</span></div>
-                    <div><code>text-dark</code> <span class="color-badge dark">Dark</span></div>
-                </div>
-            </section>
+    <div class="diff-card">
+      <h4>5) Modern Web Support</h4>
+      <p>
+        Required for HTTP/2, HTTP/3, Service Workers, PWAs.
+      </p>
+    </div>
 
-            <section id="js" class="section">
-                <h1>PART I – JavaScript</h1>
-                <div class="card">
-                    <p>JavaScript is an interpreted, high-level programming language.</p>
-                    <p>It is case-sensitive.</p>
-                    <p>Statements typically end with a semicolon (;).</p>
-                    <p>Code blocks use curly braces { }.</p>
-                </div>
+    <div class="diff-card highlight">
+      <h4>6) Ports</h4>
+      <p>HTTP uses Port 80</p>
+      <p>HTTPS uses Port 443</p>
+    </div>
+  </div>
 
-                <h2>Variables</h2>
-                <p>Variables are containers used to store values.</p>
-                <p>Three types of variables:</p>
-                <div class="var-grid">
-                    <div class="var-card">
-                        <h4>var</h4>
-                        <p>Function-scoped</p>
-                    </div>
-                    <div class="var-card">
-                        <h4>const</h4>
-                        <p>Block-scoped (cannot be reassigned)</p>
-                    </div>
-                    <div class="var-card">
-                        <h4>let</h4>
-                        <p>Block-scoped (can be reassigned)</p>
-                    </div>
-                </div>
+  <h2>Differentiation</h2>
 
-                <h2>Difference Between var and let</h2>
-                <div class="diff-grid">
-                    <div class="diff-item">
-                        <h4>1) Scope Difference</h4>
-                        <p><strong>var:</strong> Function-scoped. It is accessible anywhere inside the function.</p>
-                        <p><strong>let:</strong> Block-scoped. It is accessible only within the block in which it is declared.</p>
-                    </div>
-                    <div class="diff-item">
-                        <h4>2) Redeclaration</h4>
-                        <p><strong>var:</strong> Redeclaration is allowed.</p>
-                        <p><strong>let:</strong> Redeclaration is not allowed in the same scope.</p>
-                    </div>
-                </div>
+<div class="grid-2">
 
-                <h2>Hoisting</h2>
-                <div class="code-example">
-<pre>var:
+  <div class="diff-card">
+    <h4>1) Definition</h4>
+    <p>
+      <strong>HTTP:</strong> HTTP (Hyper Text Transfer Protocol) is a stateless application layer protocol used for communication between a web browser and a web server.
+    </p>
+    <p>
+      <strong>HTTPS:</strong> HTTPS (Hyper Text Transfer Protocol Secure) is the secure version of HTTP that uses SSL/TLS encryption to protect data.
+    </p>
+  </div>
+
+  <div class="diff-card">
+    <h4>2) Security</h4>
+    <p>
+      <strong>HTTP:</strong> Does not provide security. Data is sent in plain text and can be intercepted.
+    </p>
+    <p>
+      <strong>HTTPS:</strong> Provides security by encrypting the data during transmission.
+    </p>
+  </div>
+
+  <div class="diff-card">
+    <h4>3) Encryption</h4>
+    <p><strong>HTTP:</strong> Does not use encryption.</p>
+    <p>
+      <strong>HTTPS:</strong> Uses SSL/TLS encryption. During the TLS handshake, secret keys are generated and data becomes unreadable.
+    </p>
+  </div>
+
+  <div class="diff-card">
+    <h4>4) Integrity</h4>
+    <p>
+      <strong>HTTP:</strong> Data can be modified during transmission.
+    </p>
+    <p>
+      <strong>HTTPS:</strong> Ensures integrity using MAC/AEAD. If data is altered, the connection breaks.
+    </p>
+  </div>
+
+  <div class="diff-card">
+    <h4>5) Server Identity & Authentication</h4>
+    <p><strong>HTTP:</strong> Does not verify server identity.</p>
+    <p>
+      <strong>HTTPS:</strong> Uses SSL certificates to verify domain identity and protect against MITM attacks.
+    </p>
+  </div>
+
+  <div class="diff-card highlight">
+    <h4>6) Browser & Platform Support</h4>
+    <p>
+      <strong>HTTP:</strong> Marked as "Not Secure" and some APIs may be blocked.
+    </p>
+    <p>
+      <strong>HTTPS:</strong> Trusted by browsers and required for modern web features.
+    </p>
+  </div>
+
+</div>
+
+
+  <h2 class="table-title">Differentiate Between HTTP and HTTPS</h2>
+
+  <div class="table-container-white">
+    <table class="clean-table">
+      <thead>
+        <tr>
+          <th>Sr. No.</th>
+          <th>HTTP</th>
+          <th>HTTPS</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Stands for Hyper Text Transfer Protocol</td>
+          <td>Stands for Hyper Text Transfer Protocol Secure</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Not secure</td>
+          <td>Secure</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Data transmitted in plain text</td>
+          <td>Data encrypted using SSL/TLS</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>No data integrity</td>
+          <td>Ensures data integrity</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>No server authentication</td>
+          <td>Server verified using SSL certificate</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>Vulnerable to MITM attacks</td>
+          <td>Protected against MITM attacks</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>Uses Port 80</td>
+          <td>Uses Port 443</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>URL starts with http://</td>
+          <td>URL starts with https://</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</section>
+
+        <section id="status-codes" class="section">
+          <h1>HTTP Status Codes</h1>
+          <div class="status-grid">
+            <div class="status-group">
+              <h3>1XX – Informational Status Codes</h3>
+              <p>
+                Indicate that the request has been received and processing is
+                continuing.
+              </p>
+              <p>
+                <strong>100</strong> – Continue: The server has received the
+                initial part of the request.
+              </p>
+              <p>
+                <strong>101</strong> – Switching Protocols: The server switches
+                protocols as requested by the client (for example, upgrading
+                from HTTP to WebSockets).
+              </p>
+            </div>
+            <div class="status-group">
+              <h3>2XX – Successful Status Codes</h3>
+              <p>
+                Indicate that the request was successfully received, understood,
+                and processed.
+              </p>
+              <p>
+                <strong>200</strong> – OK: The request was successful, and the
+                server returned the requested data.
+              </p>
+              <p>
+                <strong>201</strong> – Created: A new resource has been
+                successfully created (commonly after form submission or data
+                creation).
+              </p>
+              <p>
+                <strong>204</strong> – No Content: The request was successful,
+                but the server has no content to return.
+              </p>
+            </div>
+            <div class="status-group">
+              <h3>3XX – Redirection Status Codes</h3>
+              <p>
+                Indicate that the requested resource is located elsewhere and
+                further action is required to complete the request.
+              </p>
+              <p>
+                <strong>301</strong> – Moved Permanently: The resource has
+                permanently moved to a new URL. Search engines update their
+                records accordingly.
+              </p>
+              <p>
+                <strong>302</strong> – Found (Temporary Redirect): The resource
+                is temporarily available at a different location.
+              </p>
+              <p>
+                <strong>304</strong> – Not Modified: The requested resource has
+                not changed since the last request, so the browser can use its
+                cached version.
+              </p>
+            </div>
+            <div class="status-group">
+              <h3>4XX – Client Error Status Codes</h3>
+              <p>
+                Indicate that there is a problem with the client-side request.
+              </p>
+              <p>
+                <strong>400</strong> – Bad Request: The server cannot understand
+                the request due to incorrect syntax or invalid data.
+              </p>
+              <p>
+                <strong>401</strong> – Unauthorized: Authentication is required,
+                and the client has not provided valid credentials.
+              </p>
+              <p>
+                <strong>403</strong> – Forbidden: The client is authenticated
+                but does not have permission to access the resource.
+              </p>
+              <p>
+                <strong>404</strong> – Not Found: The requested resource does
+                not exist on the server.
+              </p>
+            </div>
+            <div class="status-group">
+              <h3>5XX – Server Error Status Codes</h3>
+              <p>Indicate that the server failed to fulfill a valid request.</p>
+              <p>
+                <strong>500</strong> – Internal Server Error: A generic error
+                indicating that the server encountered an unexpected condition.
+              </p>
+              <p>
+                <strong>502</strong> – Bad Gateway: The server received an
+                invalid response from an upstream server.
+              </p>
+              <p>
+                <strong>503</strong> – Service Unavailable: The server is unable
+                to handle the request due to overload or maintenance.
+              </p>
+              <p>
+                <strong>504</strong> – Gateway Timeout: The server did not
+                receive a timely response from another server.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="git" class="section">
+          <h1>Version Control System</h1>
+          <div class="card">
+            <p>
+              A Version Control System (VCS) is a tool designed to track changes
+              in file history and enable multiple developers to work on the same
+              project efficiently.
+            </p>
+            <p>
+              Git is a distributed version control system, while GitHub is a
+              cloud-based platform that hosts Git repositories and enables
+              collaboration.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Git</h3>
+            <p>
+              Git is an open-source distributed version control system created
+              by Linus Torvalds.
+            </p>
+            <p>
+              It allows developers to track changes in source code, revert to
+              previous versions, create branches for experimentation, and
+              collaborate efficiently.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Key Characteristics</h3>
+            <ul>
+              <li>Distributed system</li>
+              <li>High performance</li>
+              <li>Offline capability</li>
+              <li>Data integrity</li>
+            </ul>
+          </div>
+          <h3>Git Commands</h3>
+          <div class="command-grid">
+            <div><code>git init</code>: Initializes a new repository.</div>
+            <div>
+              <code>git status</code>: Displays the current state of the working
+              repository and shows modified files.
+            </div>
+            <div>
+              <code>git add</code>: Adds files to the staging area and prepares
+              them for committing.
+            </div>
+            <div>
+              <code>git commit</code>: Saves staged changes permanently in the
+              repository. Each commit has a unique hash ID, author information,
+              timestamp, and commit message.
+            </div>
+            <div>
+              <code>git log</code>: Displays the commit history and is useful
+              for tracking project evolution.
+            </div>
+            <div>
+              <code>git branch</code>: Used to create and manage branches.
+            </div>
+            <div><code>git checkout</code>: Switches between branches.</div>
+            <div>
+              <code>git merge</code>: Combines changes from one branch into
+              another.
+            </div>
+          </div>
+        </section>
+
+        <section id="css" class="section">
+          <h1>CSS Dimensions</h1>
+          <h2>1) Absolute Units</h2>
+          <div class="unit-grid">
+            <div class="unit-card">
+              <h4><code>px</code></h4>
+              <p>
+                A fixed unit based on screen pixels. It does not change relative
+                to other elements.
+              </p>
+            </div>
+            <div class="unit-card">
+              <h4><code>cm</code></h4>
+              <p>
+                A size measured in centimeters. Mostly used for print-based
+                layouts.
+              </p>
+            </div>
+            <div class="unit-card">
+              <h4><code>mm</code></h4>
+              <p>
+                A size measured in millimeters. Also mainly used for print-based
+                layouts.
+              </p>
+            </div>
+          </div>
+
+          <h2>2) Relative Units</h2>
+          <div class="unit-grid">
+            <div class="unit-card">
+              <h4><code>%</code></h4>
+              <p>Relative to the size of the parent element.</p>
+              <p>Example: <code>width: 50%;</code></p>
+            </div>
+            <div class="unit-card">
+              <h4><code>em</code></h4>
+              <p>Relative to the font size of the parent element.</p>
+              <p>Example: <code>font-size: 2em;</code></p>
+            </div>
+            <div class="unit-card">
+              <h4><code>rem</code></h4>
+              <p>Relative to the root (html) font size.</p>
+              <p>Example: <code>font-size: 1.5rem;</code></p>
+            </div>
+            <div class="unit-card">
+              <h4><code>vw</code></h4>
+              <p>1% of the viewport width.</p>
+              <p>Example: <code>width: 50vw;</code></p>
+            </div>
+            <div class="unit-card">
+              <h4><code>vh</code></h4>
+              <p>1% of the viewport height.</p>
+              <p>Example: <code>height: 100vh;</code></p>
+            </div>
+          </div>
+        </section>
+
+        <section id="positioning" class="section">
+          <h1>CSS Position</h1>
+          <div class="position-grid">
+            <div class="pos-card">
+              <h4>Static</h4>
+              <p>
+                The default positioning. Elements follow the normal document
+                flow.
+              </p>
+            </div>
+            <div class="pos-card">
+              <h4>Relative</h4>
+              <p>Moves relative to its original position.</p>
+              <p><code>position: relative; top: 10px;</code></p>
+            </div>
+            <div class="pos-card">
+              <h4>Absolute</h4>
+              <p>
+                Positioned relative to the nearest positioned (non-static)
+                parent element.
+              </p>
+              <p><code>position: absolute; top: 0;</code></p>
+            </div>
+            <div class="pos-card">
+              <h4>Fixed</h4>
+              <p>Stays fixed relative to the viewport, even when scrolling.</p>
+              <p><code>position: fixed; bottom: 0;</code></p>
+            </div>
+            <div class="pos-card">
+              <h4>Sticky</h4>
+              <p>
+                A hybrid of relative and fixed positioning. It behaves as
+                relative until a defined scroll position is reached.
+              </p>
+              <p><code>position: sticky; top: 0;</code></p>
+            </div>
+            <div class="pos-card">
+              <h4>Floating</h4>
+              <p>
+                Originally used for layouts. It allows elements to float left or
+                right.
+              </p>
+              <p><code>float: left;</code></p>
+            </div>
+          </div>
+        </section>
+
+        <section id="bootstrap" class="section">
+          <h1>Bootstrap (getbootstrap.com – documentation)</h1>
+          <h2>Breakpoints</h2>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Breakpoint</th>
+                  <th>Screen Size</th>
+                  <th>Class Prefix</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Extra Small</td>
+                  <td>&lt; 576px</td>
+                  <td>col-</td>
+                </tr>
+                <tr>
+                  <td>Small</td>
+                  <td>≥ 576px</td>
+                  <td>col-sm-</td>
+                </tr>
+                <tr>
+                  <td>Medium</td>
+                  <td>≥ 768px</td>
+                  <td>col-md-</td>
+                </tr>
+                <tr>
+                  <td>Large</td>
+                  <td>≥ 992px</td>
+                  <td>col-lg-</td>
+                </tr>
+                <tr>
+                  <td>XL</td>
+                  <td>≥ 1200px</td>
+                  <td>col-xl-</td>
+                </tr>
+                <tr>
+                  <td>XXL</td>
+                  <td>≥ 1400px</td>
+                  <td>col-xxl-</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="example">
+            Use Case: <code>col-sm-12 col-md-6 col-lg-4</code> This changes the
+            column width across different devices.
+          </p>
+
+          <h2>Colors (Predefined Theme Colors)</h2>
+          <div class="color-grid">
+            <div>
+              <code>text-primary</code>
+              <span class="color-badge primary">Primary</span>
+            </div>
+            <div>
+              <code>text-success</code>
+              <span class="color-badge success">Success</span>
+            </div>
+            <div>
+              <code>text-danger</code>
+              <span class="color-badge danger">Danger</span>
+            </div>
+            <div>
+              <code>text-warning</code>
+              <span class="color-badge warning">Warning</span>
+            </div>
+            <div>
+              <code>text-info</code> <span class="color-badge info">Info</span>
+            </div>
+            <div>
+              <code>text-dark</code> <span class="color-badge dark">Dark</span>
+            </div>
+          </div>
+        </section>
+
+        <section id="js" class="section">
+          <h1>PART I – JavaScript</h1>
+          <div class="card">
+            <p>
+              JavaScript is an interpreted, high-level programming language.
+            </p>
+            <p>It is case-sensitive.</p>
+            <p>Statements typically end with a semicolon (;).</p>
+            <p>Code blocks use curly braces { }.</p>
+          </div>
+
+          <h2>Variables</h2>
+          <p>Variables are containers used to store values.</p>
+          <p>Three types of variables:</p>
+          <div class="var-grid">
+            <div class="var-card">
+              <h4>var</h4>
+              <p>Function-scoped</p>
+            </div>
+            <div class="var-card">
+              <h4>const</h4>
+              <p>Block-scoped (cannot be reassigned)</p>
+            </div>
+            <div class="var-card">
+              <h4>let</h4>
+              <p>Block-scoped (can be reassigned)</p>
+            </div>
+          </div>
+
+          <h2>Difference Between var and let</h2>
+          <div class="diff-grid">
+            <div class="diff-item">
+              <h4>1) Scope Difference</h4>
+              <p>
+                <strong>var:</strong> Function-scoped. It is accessible anywhere
+                inside the function.
+              </p>
+              <p>
+                <strong>let:</strong> Block-scoped. It is accessible only within
+                the block in which it is declared.
+              </p>
+            </div>
+            <div class="diff-item">
+              <h4>2) Redeclaration</h4>
+              <p><strong>var:</strong> Redeclaration is allowed.</p>
+              <p>
+                <strong>let:</strong> Redeclaration is not allowed in the same
+                scope.
+              </p>
+            </div>
+          </div>
+
+          <h2>Hoisting</h2>
+          <div class="code-example">
+            <pre>
+var:
 console.log(a); // undefined
 var a = 5;
 
 let:
 console.log(b); // ReferenceError (Temporal Dead Zone)
-let b = 10;</pre>
-                </div>
+let b = 10;</pre
+            >
+          </div>
 
-                <h2>Global Object Behavior</h2>
-                <div class="code-example">
-<pre>var:
+          <h2>Global Object Behavior</h2>
+          <div class="code-example">
+            <pre>
+var:
 var a = 5;
 console.log(window.a); // 5
 
 let:
 let a = 8;
-console.log(window.a); // undefined</pre>
-                </div>
+console.log(window.a); // undefined</pre
+            >
+          </div>
 
-                <h2>Data Types</h2>
-                <div class="type-grid">
-                    <div class="type-card">
-                        <h4>Primitive Data Types</h4>
-                        <ul>
-                            <li>Number (includes decimals): 3, 10, 3.14</li>
-                            <li>String (sequence of characters): "Mahesh"</li>
-                            <li>Boolean (true or false)</li>
-                            <li>Undefined</li>
-                            <li>Null</li>
-                            <li>BigInt (very large integers)</li>
-                            <li>Symbol (unique identifiers)</li>
-                        </ul>
-                    </div>
-                    <div class="type-card">
-                        <h4>Non-Primitive Data Types</h4>
-                        <ul>
-                            <li>Object</li>
-                            <li>Array</li>
-                            <li>Function</li>
-                        </ul>
-                    </div>
-                </div>
+          <h2>Data Types</h2>
+          <div class="type-grid">
+            <div class="type-card">
+              <h4>Primitive Data Types</h4>
+              <ul>
+                <li>Number (includes decimals): 3, 10, 3.14</li>
+                <li>String (sequence of characters): "Mahesh"</li>
+                <li>Boolean (true or false)</li>
+                <li>Undefined</li>
+                <li>Null</li>
+                <li>BigInt (very large integers)</li>
+                <li>Symbol (unique identifiers)</li>
+              </ul>
+            </div>
+            <div class="type-card">
+              <h4>Non-Primitive Data Types</h4>
+              <ul>
+                <li>Object</li>
+                <li>Array</li>
+                <li>Function</li>
+              </ul>
+            </div>
+          </div>
 
-                <h2>Operators</h2>
-                <div class="operator-grid">
-                    <div class="op-card">
-                        <h4>Assignment</h4>
-                        <p>=, +=, -=, *=</p>
-                    </div>
-                    <div class="op-card">
-                        <h4>Arithmetic</h4>
-                        <p>+, -, *, /, %, ** (exponentiation)</p>
-                    </div>
-                    <div class="op-card">
-                        <h4>Comparison</h4>
-                        <p>== (loose), === (strict)</p>
-                        <p>1 == true → true</p>
-                        <p>1 === true → false</p>
-                    </div>
-                    <div class="op-card">
-                        <h4>Logical</h4>
-                        <p>|| (OR), && (AND), ! (NOT)</p>
-                    </div>
-                </div>
+          <h2>Operators</h2>
+          <div class="operator-grid">
+            <div class="op-card">
+              <h4>Assignment</h4>
+              <p>=, +=, -=, *=</p>
+            </div>
+            <div class="op-card">
+              <h4>Arithmetic</h4>
+              <p>+, -, *, /, %, ** (exponentiation)</p>
+            </div>
+            <div class="op-card">
+              <h4>Comparison</h4>
+              <p>== (loose), === (strict)</p>
+              <p>1 == true → true</p>
+              <p>1 === true → false</p>
+            </div>
+            <div class="op-card">
+              <h4>Logical</h4>
+              <p>|| (OR), && (AND), ! (NOT)</p>
+            </div>
+          </div>
 
-                <h2>Functions</h2>
-                <div class="code-example">
-<pre>function abc() {
+          <h2>Functions</h2>
+          <div class="code-example">
+            <pre>
+function abc() {
     console.log("...");
 }
 
@@ -415,124 +730,191 @@ function add(a, b) {
 }
 
 Arrow Function:
-const add = (a, b) => a + b;</pre>
-                </div>
+const add = (a, b) => a + b;</pre
+            >
+          </div>
 
-                <h2>Arrays</h2>
-                <div class="code-example">
-let arr_name = ["a1", "a2", ...];
-arr_name[i];
+          <h2>Arrays</h2>
+          <div class="code-example">
+            let arr_name = ["a1", "a2", ...]; arr_name[i]; Methods: - push() –
+            Adds an element at the end - pop() – Removes an element from the end
+            - shift() – Removes an element from the beginning - slice() –
+            Returns a portion of the array
+          </div>
 
-Methods:
-- push() – Adds an element at the end
-- pop() – Removes an element from the end
-- shift() – Removes an element from the beginning
-- slice() – Returns a portion of the array</div>
+          <h2>Objects</h2>
+          <div class="code-example">
+            let student = { name: "ab", age: 20 }; Accessing properties:
+            student.name or student["age"]
+          </div>
 
-                <h2>Objects</h2>
-                <div class="code-example">
-let student = {
-    name: "ab",
-    age: 20
-};
+          <h2>Debugging</h2>
+          <p>
+            Debugging is the process of identifying and fixing errors so that
+            the program runs correctly.
+          </p>
+          <p>
+            Types of Errors: Syntax Error, Reference Error, Type Error, Logical
+            Error
+          </p>
+          <p>Debugging Methods:</p>
+          <ul>
+            <li>console.log()</li>
+            <li>Browser Developer Tools</li>
+            <li>Breakpoints</li>
+            <li>Step-by-step execution</li>
+            <li>Linting tools</li>
+          </ul>
 
-Accessing properties:
-student.name
-or
-student["age"]</div>
+          <h2>Event Handling</h2>
+          <p>
+            An event is an action or occurrence detected by the browser, such as
+            a click, key press, or mouse movement.
+          </p>
+        </section>
 
-                <h2>Debugging</h2>
-                <p>Debugging is the process of identifying and fixing errors so that the program runs correctly.</p>
-                <p>Types of Errors: Syntax Error, Reference Error, Type Error, Logical Error</p>
-                <p>Debugging Methods:</p>
-                <ul>
-                    <li>console.log()</li>
-                    <li>Browser Developer Tools</li>
-                    <li>Breakpoints</li>
-                    <li>Step-by-step execution</li>
-                    <li>Linting tools</li>
-                </ul>
+        <section id="dom" class="section">
+          <h1>PART II – Document Object Model (DOM)</h1>
+          <div class="card">
+            <p>
+              The Document Object Model (DOM) is a programming interface that
+              allows JavaScript to interact with HTML and CSS.
+            </p>
+            <p>
+              When a webpage loads, the browser parses the HTML document and
+              converts it into a tree-like structure known as the DOM Tree.
+            </p>
+            <p>
+              In this structure, every HTML element becomes an object (node),
+              every attribute becomes a property, and every piece of text
+              becomes a text node.
+            </p>
+            <p>
+              JavaScript can use the DOM to dynamically modify content,
+              structure, and styling after the page has loaded.
+            </p>
+            <p>
+              The DOM makes webpages interactive instead of static by allowing
+              real-time updates without reloading the page.
+            </p>
+            <p>
+              It acts as a bridge between HTML (structure), CSS (styling), and
+              JavaScript (behavior).
+            </p>
+            <p>
+              The DOM is maintained as a living standard by WHATWG and
+              continuously evolves with browser improvements.
+            </p>
+          </div>
 
-                <h2>Event Handling</h2>
-                <p>An event is an action or occurrence detected by the browser, such as a click, key press, or mouse movement.</p>
-            </section>
+          <h2>DOM Tree Structure</h2>
+          <div class="dom-grid">
+            <div class="dom-card">
+              <h4>Nodes in DOM</h4>
+              <p>1) Document Node – Represents the entire HTML document.</p>
+              <p>2) Element Node – Represents HTML elements like div, p, h1.</p>
+              <p>3) Text Node – Represents the text inside elements.</p>
+              <p>
+                4) Attribute Node – Represents element attributes such as id and
+                class.
+              </p>
+            </div>
+            <div class="dom-card">
+              <h4>DOM Traversal</h4>
+              <p>
+                DOM traversal means navigating between elements in the DOM tree.
+              </p>
+              <p>
+                Important properties include parentNode, children,
+                nextElementSibling, and previousElementSibling.
+              </p>
+              <p>
+                This allows developers to move between related elements
+                efficiently.
+              </p>
+            </div>
+            <div class="dom-card">
+              <h4>DOM Manipulation</h4>
+              <p>
+                DOM manipulation refers to adding, removing, or modifying
+                elements dynamically.
+              </p>
+              <p>
+                Common methods include createElement(), appendChild(), remove(),
+                and setAttribute().
+              </p>
+              <p>
+                Developers can also modify text using textContent or HTML using
+                innerHTML.
+              </p>
+            </div>
+          </div>
 
-           <section id="dom" class="section">
-    <h1>PART II – Document Object Model (DOM)</h1>
-    <div class="card">
-        <p>The Document Object Model (DOM) is a programming interface that allows JavaScript to interact with HTML and CSS.</p>
-        <p>When a webpage loads, the browser parses the HTML document and converts it into a tree-like structure known as the DOM Tree.</p>
-        <p>In this structure, every HTML element becomes an object (node), every attribute becomes a property, and every piece of text becomes a text node.</p>
-        <p>JavaScript can use the DOM to dynamically modify content, structure, and styling after the page has loaded.</p>
-        <p>The DOM makes webpages interactive instead of static by allowing real-time updates without reloading the page.</p>
-        <p>It acts as a bridge between HTML (structure), CSS (styling), and JavaScript (behavior).</p>
-        <p>The DOM is maintained as a living standard by WHATWG and continuously evolves with browser improvements.</p>
-    </div>
+          <h2>Event Handling in DOM</h2>
+          <div class="dom-grid">
+            <div class="dom-card">
+              <h4>Event Listeners</h4>
+              <p>
+                Events are actions detected by the browser such as click,
+                keydown, submit, and mouseover.
+              </p>
+              <p>
+                JavaScript uses addEventListener() to respond to user
+                interactions.
+              </p>
+              <p>
+                This enables interactive features like buttons, forms, and
+                animations.
+              </p>
+            </div>
+            <div class="dom-card">
+              <h4>Event Bubbling</h4>
+              <p>
+                Event bubbling occurs when an event starts at the target element
+                and propagates upward to parent elements.
+              </p>
+              <p>
+                This behavior allows parent elements to handle events from their
+                children.
+              </p>
+            </div>
+            <div class="dom-card">
+              <h4>Event Delegation</h4>
+              <p>
+                Event delegation is a technique where a parent element handles
+                events for multiple child elements.
+              </p>
+              <p>
+                It improves performance and works for dynamically added
+                elements.
+              </p>
+            </div>
+          </div>
 
-    <h2>DOM Tree Structure</h2>
-    <div class="dom-grid">
-        <div class="dom-card">
-            <h4>Nodes in DOM</h4>
-            <p>1) Document Node – Represents the entire HTML document.</p>
-            <p>2) Element Node – Represents HTML elements like div, p, h1.</p>
-            <p>3) Text Node – Represents the text inside elements.</p>
-            <p>4) Attribute Node – Represents element attributes such as id and class.</p>
-        </div>
-        <div class="dom-card">
-            <h4>DOM Traversal</h4>
-            <p>DOM traversal means navigating between elements in the DOM tree.</p>
-            <p>Important properties include parentNode, children, nextElementSibling, and previousElementSibling.</p>
-            <p>This allows developers to move between related elements efficiently.</p>
-        </div>
-        <div class="dom-card">
-            <h4>DOM Manipulation</h4>
-            <p>DOM manipulation refers to adding, removing, or modifying elements dynamically.</p>
-            <p>Common methods include createElement(), appendChild(), remove(), and setAttribute().</p>
-            <p>Developers can also modify text using textContent or HTML using innerHTML.</p>
-        </div>
-    </div>
-
-    <h2>Event Handling in DOM</h2>
-    <div class="dom-grid">
-        <div class="dom-card">
-            <h4>Event Listeners</h4>
-            <p>Events are actions detected by the browser such as click, keydown, submit, and mouseover.</p>
-            <p>JavaScript uses addEventListener() to respond to user interactions.</p>
-            <p>This enables interactive features like buttons, forms, and animations.</p>
-        </div>
-        <div class="dom-card">
-            <h4>Event Bubbling</h4>
-            <p>Event bubbling occurs when an event starts at the target element and propagates upward to parent elements.</p>
-            <p>This behavior allows parent elements to handle events from their children.</p>
-        </div>
-        <div class="dom-card">
-            <h4>Event Delegation</h4>
-            <p>Event delegation is a technique where a parent element handles events for multiple child elements.</p>
-            <p>It improves performance and works for dynamically added elements.</p>
-        </div>
-    </div>
-
-    <h2>DOM Levels</h2>
-    <div class="dom-grid">
-        <div class="dom-card">
-            <h4>1) DOM Level 0</h4>
-            <p>Unofficial and browser-dependent implementation.</p>
-            <p>Included basic objects like window and document.</p>
-        </div>
-        <div class="dom-card">
-            <h4>2) DOM Level 1</h4>
-            <p>The first official standard focusing on document structure and basic manipulation.</p>
-        </div>
-        <div class="dom-card">
-            <h4>3) DOM Level 2</h4>
-            <p>Introduced event handling and CSS manipulation.</p>
-            <p>Made webpages more dynamic and interactive.</p>
-        </div>
-    </div>
-</section>
-        </main>
+          <h2>DOM Levels</h2>
+          <div class="dom-grid">
+            <div class="dom-card">
+              <h4>1) DOM Level 0</h4>
+              <p>Unofficial and browser-dependent implementation.</p>
+              <p>Included basic objects like window and document.</p>
+            </div>
+            <div class="dom-card">
+              <h4>2) DOM Level 1</h4>
+              <p>
+                The first official standard focusing on document structure and
+                basic manipulation.
+              </p>
+            </div>
+            <div class="dom-card">
+              <h4>3) DOM Level 2</h4>
+              <p>Introduced event handling and CSS manipulation.</p>
+              <p>Made webpages more dynamic and interactive.</p>
+            </div>
+          </div>
+        </section>
+      </main>
     </div>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
